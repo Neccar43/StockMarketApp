@@ -10,7 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.novacodestudios.stockmarketapp.presentation.company_listings.NavGraphs
+import com.novacodestudios.stockmarketapp.presentation.NavGraphs
 import com.novacodestudios.stockmarketapp.ui.theme.StockMarketAppTheme
 import com.ramcosta.composedestinations.DestinationsNavHost
 
@@ -27,7 +27,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    DestinationsNavHost(navGraph =NavGraphs.root )
+                    DestinationsNavHost(navGraph = NavGraphs.root )
                 }
             }
         }

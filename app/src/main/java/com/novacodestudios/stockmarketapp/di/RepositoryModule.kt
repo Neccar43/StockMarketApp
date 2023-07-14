@@ -2,8 +2,10 @@ package com.novacodestudios.stockmarketapp.di
 
 import com.novacodestudios.stockmarketapp.data.csv.CSVParser
 import com.novacodestudios.stockmarketapp.data.csv.CompanyListingsParser
+import com.novacodestudios.stockmarketapp.data.csv.IntradayInfoParser
 import com.novacodestudios.stockmarketapp.data.repository.StockRepositoryImpl
 import com.novacodestudios.stockmarketapp.domain.model.CompanyListing
+import com.novacodestudios.stockmarketapp.domain.model.IntradayInfo
 import com.novacodestudios.stockmarketapp.domain.repository.StockRepository
 import dagger.Binds
 import dagger.Module
@@ -26,8 +28,16 @@ abstract class RepositoryModule {
 
     @Binds
     @Singleton
+    abstract fun bindIntradayInfoParser(
+        intradayInfoParser: IntradayInfoParser,
+    ): CSVParser<IntradayInfo>
+
+    @Binds
+    @Singleton
     abstract fun bindStockRepository(
         stockRepositoryImpl: StockRepositoryImpl
     ):StockRepository
+
+
 
 }
